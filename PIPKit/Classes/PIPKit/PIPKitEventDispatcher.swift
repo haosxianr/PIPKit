@@ -101,7 +101,7 @@ final class PIPKitEventDispatcher {
                 }
             }
         }
-        
+#if os(iOS)
         deviceNotificationObserver = NotificationCenter.default.addObserver(forName: UIDevice.orientationDidChangeNotification,
                                                                             object: nil,
                                                                             queue: nil) { [weak self] (noti) in
@@ -109,7 +109,7 @@ final class PIPKitEventDispatcher {
                                                                                     self?.updateFrame()
                                                                                 }, completion:nil)
         }
-        
+#endif
         windowSubviewsObservation = window?.observe(\.subviews,
                                                      options: [.initial, .new],
                                                      changeHandler: { [weak self] window, _ in
