@@ -11,7 +11,6 @@ import AVKit
 import AVFoundation
 import Combine
 
-@available(iOS 15.0, *)
 final class AVPIPKitVideoController: NSObject {
     
     var isPIPSupported: Bool {
@@ -141,7 +140,6 @@ final class AVPIPKitVideoController: NSObject {
     
 }
 
-@available(iOS 15.0, *)
 extension AVPIPKitVideoController: AVPictureInPictureControllerDelegate {
     
     func pictureInPictureControllerWillStopPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
@@ -154,7 +152,6 @@ extension AVPIPKitVideoController: AVPictureInPictureControllerDelegate {
     
 }
 
-@available(iOS 15.0, *)
 extension AVPIPKitVideoController: AVPictureInPictureSampleBufferPlaybackDelegate {
     
     func pictureInPictureController(_ pictureInPictureController: AVPictureInPictureController, setPlaying playing: Bool) {}

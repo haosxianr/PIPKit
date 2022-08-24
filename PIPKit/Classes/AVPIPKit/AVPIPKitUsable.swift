@@ -12,16 +12,11 @@ import AVKit
 public extension PIPKit {
  
     static var isAVPIPKitSupported: Bool {
-        guard #available(iOS 15.0, *) else {
-            return false
-        }
-        
         return AVPictureInPictureController.isPictureInPictureSupported()
     }
      
 }
 
-@available(iOS 15.0, *)
 public enum AVPIPKitRenderPolicy {
     
     case once
@@ -29,7 +24,6 @@ public enum AVPIPKitRenderPolicy {
     
 }
 
-@available(iOS 15.0, *)
 extension AVPIPKitRenderPolicy {
     
     var preferredFramesPerSecond: Int {
@@ -43,7 +37,6 @@ extension AVPIPKitRenderPolicy {
     
 }
 
-@available(iOS 15.0, *)
 public protocol AVPIPKitUsable {
     
     var renderer: AVPIPKitRenderer { get }
@@ -53,7 +46,6 @@ public protocol AVPIPKitUsable {
     
 }
 
-@available(iOS 15.0, *)
 public extension AVPIPKitUsable {
     
     var isAVKitPIPSupported: Bool {

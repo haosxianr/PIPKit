@@ -96,9 +96,7 @@ final class PIPKitEventDispatcher {
         if let pipCorner = rootViewController?.pipCorner {
             rootViewController?.view.layer.cornerRadius = pipCorner.radius
             if let curve = pipCorner.curve {
-                if #available(iOS 13.0, *) {
-                    rootViewController?.view.layer.cornerCurve = curve
-                }
+                rootViewController?.view.layer.cornerCurve = curve
             }
         }
 #if os(iOS)
@@ -142,10 +140,8 @@ final class PIPKitEventDispatcher {
         let pipEdgeInsets = rootViewController.pipEdgeInsets
         var edgeInsets = UIEdgeInsets.zero
         
-        if #available(iOS 11.0, *) {
-            if rootViewController.insetsPIPFromSafeArea {
-                edgeInsets = window.safeAreaInsets
-            }
+        if rootViewController.insetsPIPFromSafeArea {
+            edgeInsets = window.safeAreaInsets
         }
         
         switch pipPosition {
@@ -183,9 +179,7 @@ final class PIPKitEventDispatcher {
         let center = rootViewController.view.center
         var safeAreaInsets = UIEdgeInsets.zero
         
-        if #available(iOS 11.0, *) {
-            safeAreaInsets = window.safeAreaInsets
-        }
+        safeAreaInsets = window.safeAreaInsets
         
         let vh = (window.frame.height - (safeAreaInsets.top + safeAreaInsets.bottom)) / 3.0
         
@@ -221,10 +215,8 @@ final class PIPKitEventDispatcher {
             let pipEdgeInsets = rootViewController.pipEdgeInsets
             var edgeInsets = UIEdgeInsets.zero
             
-            if #available(iOS 11.0, *) {
-                if rootViewController.insetsPIPFromSafeArea {
-                    edgeInsets = window.safeAreaInsets
-                }
+            if rootViewController.insetsPIPFromSafeArea {
+                edgeInsets = window.safeAreaInsets
             }
             
             var offset = startOffset
